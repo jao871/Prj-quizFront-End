@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Track - Resultado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/resultado.css">
+</head>
+<body>
+    <img src="../imgs/Logo.png" alt="Logo do Vibe Track" class="logo">
+
+    <div class="resultado-wrapper">
+
+        <div class="resultado-esquerda">
+            <ul class="gabarito-lista" id="gabarito-lista"></ul>
+        </div>
+
+        <div class="resultado-direita">
+            <h1 class="titulo-gabarito">GABARITO</h1>
+            <p class="score" id="score"></p>
+            <button class="btn-tentar" onclick="reiniciar()">↺ tentar novamente</button>
+        </div>
+
+    </div>
+
+    <script>
+        const respostas = JSON.parse(localStorage.getItem('vibetrack_respostas') || '{}');
+        const total = 6;
+        const lista = document.getElementById('gabarito-lista');
+        const scoreEl = document.getElementById('score');
+
+        let acertos = 0;
+
+        for (let i = 1; i <= total; i++) {
+            const r = respostas[i];
+            const li = document.createElement('li');
+            li.className = 'gabarito-item';
+
+            if (r && r.correta) {
+                acertos++;
+                li.classList.add('acerto');
+                li.innerHTML = `<span class="icone">✔</span> ${r.pergunta}`;
+            } else {
+                li.classList.add('erro');
+                li.innerHTML = `<span class="icone">✘</span> ${r ? r.pergunta : 'Pergunta ' + i}`;
+            }
+
+            lista.appendChild(li);
+        }
+
+        scoreEl.innerHTML = `<strong>${acertos}</strong> de <strong>${total}</strong> acertos`;
+
+        function reiniciar() {
+            localStorage.removeItem('vibetrack_respostas');
+            window.location.href = 'quiz1.html';
+        }
+    </script>
+</body>
+</html>
