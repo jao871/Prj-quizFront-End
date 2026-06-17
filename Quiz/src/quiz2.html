@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Track - Questão 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/questao.css">
+    <link rel="stylesheet" href="../CSS/player.css">
+    <link rel="stylesheet" href="../CSS/audio.css">
+    <link rel="stylesheet" href="../CSS/alternativa.css">
+    <link rel="stylesheet" href="../CSS/nav.css">
+</head>
+<body>
+    <img src="../imgs/Logo.png" alt="Logo do Vibe Track" class="logo">
+    <p class="contador">2/6</p>
+
+    <div class="quiz-wrapper">
+
+        <div class="questao">
+            <h2>2. De quem é essa?</h2>
+        </div>
+
+        <div class="quiz-main">
+
+            <div class="player">
+                <img src="../imgs/album-placeholder.png" alt="Capa do álbum" class="capa">
+                <div class="audio">
+                    <audio>
+                        <source src="../musics/track2.mp3" type="audio/mpeg">
+                    </audio>
+                    <div class="custom-player">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="player-controls">
+                            <button class="btn-play"></button>
+                            <span class="player-time">0:00 / 0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alternativas">
+                <button class="alternativa" data-index="0">
+                    <span class="letra">a)</span> Justin Bieber
+                </button>
+                <button class="alternativa" data-index="1" data-correta="true">
+                    <span class="letra">b)</span> Eminem
+                </button>
+                <button class="alternativa" data-index="2">
+                    <span class="letra">c)</span> 50 Cent
+                </button>
+                <button class="alternativa" data-index="3">
+                    <span class="letra">d)</span> Akon
+                </button>
+            </div>
+
+        </div>
+
+        <div class="quiz-footer">
+            <button class="btn-proxima" id="btn-proxima" disabled onclick="window.location.href='quiz3.html'">Próxima →</button>
+        </div>
+
+    </div>
+
+    <script src="../JS/audio.js"></script>
+    <script src="../JS/quiz.js"></script>
+</body>
+</html>
