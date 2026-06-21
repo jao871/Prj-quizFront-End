@@ -1,0 +1,35 @@
+.quiz-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 28px;
+    border-top: 1px solid #828282;
+}
+ 
+.quiz-footer button {
+    padding: 10px 26px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Orienta', sans-serif;
+    box-shadow: none;
+    transition: opacity 0.15s;
+}
+ 
+.quiz-footer button:hover {
+    opacity: 0.85;
+    transform: none;
+}
+ 
+.btn-anterior {
+    background-color: transparent;
+    border: 2px solid #6a6a6a ;
+    color: #ccc;
+}
+
+.btn-proxima {
+    background-color: #f5c518;
+    color: #222;
+}
